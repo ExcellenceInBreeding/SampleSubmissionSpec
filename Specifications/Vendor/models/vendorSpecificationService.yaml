@@ -2,36 +2,11 @@ definitions:
   vendorSpecificationService:
     type: object
     properties:
-      contactEmail:
-        description: The primary email address to contact a particular vendor platform
-        type: string
-      contactName:
-        description: The name or identifier of the primary vendor platfrom contact
-        type: string
-      contactPhone:
-        description: The phone number used to contact the vendor about a particular platform
-        type: string
-      deliverables:
-        description: List of specific deliverables provided by the vendor platform
-        type: array
-        items:
-          type: object
-          properties:
-            description:
-              type: string
-            format:
-              type: string
-            name:
-              description: Human readable name of a vendor deliverable
-              type: string
       serviceDescription:
         description: Description of the vendor platform
         type: string
       serviceName:
         description: The human readable name of a platform
-        type: string
-      serviceURL:
-        description: The URL for a vendor platform
         type: string
       serviceId:
         description: Unique identifier for this service 
@@ -45,40 +20,6 @@ definitions:
         enum:
         - FIXED
         - DISCOVERABLE
-      shippingDocuments:
-        description: Links to required shipping documents
-        type: array
-        items:
-          type: object
-          properties:
-            documentName:
-              type: string
-              description: A human readable name for this shipping document
-            documentURL:
-              type: string
-              description: A URL where a copy of this document is available
       specificRequirements:
         description: Additional arbitrary requirements for a particular platform
         type: object
-      standardRequirements:
-        $ref: '#/definitions/vendorSpecificationStandardRequirement'
-      taxonomyIdSystem:
-        description: Details about the systems used to track taxonomies
-        type: object
-        properties:
-          URI:
-            description: The primary URI for this taxonomy system
-            type: string
-          name:
-            description: The human readable name for this taxonomy system
-            type: string
-      tissueIdSystem:
-        description: Details about the systems used to track sample IDs
-        type: object
-        properties:
-          URI:
-            description: The primary URI for this tissue ID system
-            type: string
-          name:
-            description: The human readable name for this tissue ID system
-            type: string
