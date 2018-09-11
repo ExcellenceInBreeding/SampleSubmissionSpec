@@ -1,0 +1,17 @@
+definitions:
+  vendorPlate:
+    type: object
+    properties:
+      clientPlateId:
+        description: The ID which uniquely identifies this plate to the client making the request
+        type: string
+      clientPlateBarcode:
+        description: (Optional) The value of the bar code attached to this plate 
+        type: string
+      sampleSubmissionFormat:
+        $ref: '#/definitions/plateFormat'
+      samples:
+        type: array
+        items:
+          $ref: '#/definitions/vendorSample'
+              

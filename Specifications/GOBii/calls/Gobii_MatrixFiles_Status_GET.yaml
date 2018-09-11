@@ -1,0 +1,15 @@
+paths:
+  /gobii/matrixfile/{fileSubmissionID}/status:
+    get:
+      description: poll for load status of matrix file
+      parameters:
+      - description: fileSubmissionID
+        in: path
+        name: fileSubmissionID
+        required: true
+        type: string
+      responses:
+        '200':
+          description: respond with data upload ID
+      tags:
+      - GOBii

@@ -1,0 +1,37 @@
+paths:
+  /vendor/orders/{orderId}/status:
+    get:
+      parameters:
+      - description: The order id returned by the vendor when the order was successfully submitted.
+        in: path
+        name: orderId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            title: vendorPlateResponse
+            type: object
+            properties:
+              metadata:
+                $ref: '#/definitions/metadata'
+              result:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    enum:
+                    - registered
+                    - received
+                    - inProgress
+                    - completed
+                    - rejected
+          headers: {}
+      summary: Order status by orderId
+      description: 'Retrieve the current status of an order being processed'
+      tags:
+      - Vendor
+swagger: '2.0'

@@ -1,0 +1,3 @@
+definitions:
+  gobiiExperiment:
+    type: object

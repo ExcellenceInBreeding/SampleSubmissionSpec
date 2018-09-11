@@ -1,0 +1,23 @@
+paths:
+  /vendor/specifications:
+    get:
+      description: 'Defines the plate format specification for the vendor.'
+      parameters: []
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            title: vendorSpecificationResponse
+            type: object
+            properties:
+              metadata:
+                $ref: '#/definitions/metadata' 
+              result:
+                $ref: '#/definitions/vendorSpecification'
+          headers: {}
+      summary: Vendor specification
+      tags:
+      - Vendor
+swagger: '2.0'

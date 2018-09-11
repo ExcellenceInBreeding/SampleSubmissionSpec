@@ -1,0 +1,8 @@
+definitions:
+  sampleGroup:
+    type: object
+    properties:
+      samples:
+        type: array
+        items:
+          $ref: '#/definitions/sample'

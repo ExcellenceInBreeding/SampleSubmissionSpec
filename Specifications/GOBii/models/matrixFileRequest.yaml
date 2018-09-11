@@ -1,0 +1,7 @@
+definitions:
+  matrixFileRequest:
+    type: object
+    properties:
+      fileURL:
+        type: string
+  

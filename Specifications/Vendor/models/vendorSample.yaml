@@ -1,0 +1,40 @@
+definitions:
+  vendorSample:
+    type: object
+    properties:
+      column:
+        description: The Column identifier for this samples location in the plate 
+        type: string
+      row:
+        description: The Row identifier for this samples location in the plate
+        type: string
+      well:
+        description: The Well identifier for this samples location in the plate. Ussually a concatination of Row and Column.
+        type: string
+      clientSampleId:
+        description: The ID which uniquely identifies this sample to the client making the request
+        type: string
+      clientSampleBarCode:
+        description: (Optional) The value of the bar code attached to this sample 
+        type: string
+      tissueType:
+        description: The type of tissue in this sample. List of accepted tissue types can be found in the Vendor Specs.
+        type: string
+      tissueTypeOntologyReference:
+        $ref: '#/definitions/ontologyReference'
+      organismName:
+        description: Scientific organism name 
+        type: string
+      speciesName:
+        description: Scientific species name 
+        type: string
+      taxonomyOntologyReference:
+        $ref: '#/definitions/ontologyReference'
+      comments:
+        description: Generic comments about this sample for the vendor 
+        type: string
+      volume:
+        $ref: '#/definitions/measurement'
+      concentration:
+        $ref: '#/definitions/measurement'
+                  

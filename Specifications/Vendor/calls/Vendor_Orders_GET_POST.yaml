@@ -1,0 +1,69 @@
+swagger: '2.0'
+paths:
+  /vendor/orders:
+    post:
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/vendorOrderRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            title: vendorPlatesResponse
+            type: object
+            properties:
+              metadata:
+                $ref: '#/definitions/metadata' 
+              result:
+                $ref: '#/definitions/vendorOrderResponse'
+          examples: {}
+          headers: {}
+        '400':
+          description: Bad Request
+          examples:
+            'text/plain': 'Bad Request: Unknown tissue type' 
+      summary: Submit New Order
+      description: Submit a new order to a vendor
+      tags: 
+      - Vendor
+    get:
+      parameters:
+      - description: The order id returned by the vendor when the order was successfully submitted. From response of "POST /vendor/orders"
+        in: query
+        name: orderId
+        required: false
+        type: string
+      - description: The submission id returned by the vendor when a set of plates was successfully submitted. From response of "POST /vendor/plates"
+        in: query
+        name: submissionId
+        required: false
+        type: string
+      - description: The client identifier which represents the contract and payment information in the vendor system
+        in: query
+        name: clientId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            title: vendorPlateResponse
+            type: object
+            properties:
+              metadata:
+                $ref: '#/definitions/metadata'
+              result:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/definitions/vendorOrder'
+      summary: List current available orders
+      description: List current available orders
+      tags:
+      - Vendor

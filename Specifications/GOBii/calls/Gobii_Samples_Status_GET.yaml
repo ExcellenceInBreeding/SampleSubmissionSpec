@@ -1,0 +1,24 @@
+paths:
+  /samples/{sampleGroupDbId}/status:
+    get:
+      description: >
+        Call to register the event of a sample being taken. Sample ID is
+        assigned as a result of the operation and returned in response.
+      parameters:
+      - in: path
+        name: sampleGroupDbId
+        required: true
+        type: string
+        description: sampleGroupDbId
+      responses:
+        '200':
+          description: OK
+          examples: 
+            application/json:
+              metadata: 
+              result:
+                sampleDbId: Unique-Plant-SampleID
+          headers: {}
+      summary: Add a sample
+      tags:
+      - GOBii

@@ -1,0 +1,14 @@
+paths:
+  /gobii/matrixfile:
+    post:
+      description: post a new matrix file to be loaded by GOBii
+      parameters: 
+      - in: body
+        name: matrixFileRequest
+        schema: 
+          $ref: '#/definitions/matrixFileRequest'
+      responses:
+        '200':
+          description: respond with data upload ID
+      tags:
+      - GOBii

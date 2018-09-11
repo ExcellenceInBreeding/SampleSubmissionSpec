@@ -1,0 +1,30 @@
+paths:
+  /vendor/plates:
+    post:
+      parameters:
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/vendorPlatesRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            title: vendorPlatesResponse
+            type: object
+            properties:
+              metadata:
+                $ref: '#/definitions/metadata' 
+              result:
+                $ref: '#/definitions/vendorPlatesResponse'
+          examples: {}
+          headers: {}
+        '400':
+          description: Bad Request
+          examples:
+            'text/plain': 'Bad Request: Unknown tissue type' 
+      summary: Submit a new set of sample data
+      description: Submit a new set of sample data
+      tags: 
+      - Vendor
+swagger: '2.0'

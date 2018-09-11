@@ -1,0 +1,14 @@
+paths:
+  /gobii/project:
+    post:
+      description: Create project meta data in GOBii
+      parameters: 
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/gobiiProject'
+      responses:
+        '200':
+          description: new gobii project ID
+      tags: 
+      - GOBii

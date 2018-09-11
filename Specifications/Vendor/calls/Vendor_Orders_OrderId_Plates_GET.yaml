@@ -1,0 +1,33 @@
+paths:
+  /vendor/orders/{orderId}/plates:
+    get:
+      parameters:
+      - description: The order id returned by the vendor when the order was successfully submitted.
+        in: path
+        name: orderId
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: OK
+          schema:
+            title: vendorPlateResponse
+            type: object
+            properties:
+              metadata:
+                $ref: '#/definitions/metadata'
+              result:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/definitions/vendorPlate'
+          headers: {}
+      summary: Plates by orderId
+      description: 'Retrieve the plate and sample details of an order being processed'
+      tags:
+      - Vendor
+swagger: '2.0'
