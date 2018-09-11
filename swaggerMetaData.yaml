@@ -2,7 +2,7 @@ swagger: '2.0'
 host: test-server.brapi.org
 basePath: /brapi/v1
 info:
-  description: |-    
+  description: 'Source: https://github.com/ExcellenceInBreeding/SampleSubmissionSpec'
   title: 'Sample Submission API'
   version: '1.0'
 definitions: 
