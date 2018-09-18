@@ -1,0 +1,21 @@
+paths:
+  /datasets:
+    post:
+      description: Create data set meta data in GOBii
+      parameters: 
+      - in: header
+        description: 'Token used for Authorization <br/> <strong>Bearer: <token_string> </strong>'
+        name: Authorization
+        type: string
+        required: true 
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/gobiiDataSetRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/gobiiDataSetResponse'
+      tags: 
+      - GOBii

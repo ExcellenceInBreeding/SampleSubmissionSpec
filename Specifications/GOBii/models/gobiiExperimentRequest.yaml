@@ -2,51 +2,14 @@ definitions:
   gobiiExperimentRequest:
     type: object
     properties:
+      header:
+        $ref: '#/definitions/gobiiHeader'
       payload:
         type: object
         properties:
           linkCollection:
             $ref: '#/definitions/gobiiLinkCollection'      
           data:
-            type: object
-            properties:
-              allowedProcessTypes:
-                type: array
-                items:
-                  type: string
-              entityNameType:
-                type: string
-              createdBy:
-                type: string
-              createdDate:
-                type: string
-                format: date
-              modifiedBy:
-                type: string
-              modifiedDate:
-                type: string
-                format: date
-              experimentId:
-                type: string
-              experimentName:
-                type: string
-              experimentCode:
-                type: string
-              experimentDataFile:
-                type: string
-              projectId:
-                type: string
-              vendorProtocolId:
-                type: string
-              manifestId:
-                type: string
-              statusId:
-                type: string
-              datasets:
-                type: array
-                items:
-                  type: string
-              id:
-                type: string
-      header:
-        $ref: '#/definitions/gobiiHeader'
+            type: array
+            items:
+              $ref: '#/definitions/gobiiExperiment' 

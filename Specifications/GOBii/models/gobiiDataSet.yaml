@@ -1,0 +1,100 @@
+definitions:
+  gobiiDataSet:
+    type: object
+    required:
+    - experimentId
+    - datasetName
+    - callingAnalysisId
+    properties:
+      allowedProcessTypes: 
+        type: string
+        enum:
+        - UPDATE
+        - READ
+      createdBy:
+        type: integer
+      createdDate:
+        type: string
+        format: date
+      modifiedBy:
+        type: string
+      modifiedDate:
+        type: string
+        format: date
+      dataSetId:
+        type: integer
+      datasetName:
+        type: string
+      experimentId:
+        type: integer
+      experimentName:
+        type: string
+      projectId:
+        type: string
+      projectName:
+        type: string
+      protocolId:
+        type: string
+      protocolName:
+        type: string
+      platformId:
+        type: string
+      platformName:
+        type: string
+      callingAnalysisId:
+        type: integer
+      callingAnalysisName:
+        type: string
+      piContactId:
+        type: string
+      piEmail:
+        type: string
+      piFirstName:
+        type: string
+      piLastName:
+        type: string
+      dataTable:
+        type: string
+      dataFile:
+        type: string
+      qualityTable:
+        type: string
+      qualityFile:
+        type: string
+      statusId:
+        type: integer
+      datatypeId:
+        type: integer
+      datatypeName:
+        type: string
+      jobId:
+        type: string
+      jobStatusId:
+        type: string
+      jobStatusName:
+        type: string
+      jobTypeId:
+        type: string
+      jobTypeName:
+        type: string
+      jobSubmittedDate:
+        type: string
+        format: date
+      totalSamples:
+        type: string
+      totalMarkers:
+        type: string
+      loaderLastName:
+        type: string
+      loaderFirstName:
+        type: string
+      analysesIds:
+        type: array
+        items:
+          type: integer
+      scores:
+        type: array
+        items:
+          type: integer
+      id:
+        type: integer
