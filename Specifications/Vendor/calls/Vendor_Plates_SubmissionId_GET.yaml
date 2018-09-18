@@ -1,35 +1,31 @@
 paths:
-  /vendor/plates:
-    post:
+  /vendor/plates/{submissionId}:
+    get:
       parameters:
       - in: header
         description: 'Token used for Authorization <br/> <strong>Bearer: <token_string> </strong>'
         name: Authorization
         type: string
         required: true 
-      - in: body
-        name: body
-        schema:
-          $ref: '#/definitions/vendorPlatesRequest'
+      - in: path
+        name: submissionId
+        type: string
+        required: true
       responses:
         '200':
           description: OK
           schema:
-            title: vendorPlatesResponse
+            title: vendorPlateGetResponse
             type: object
             properties:
               metadata:
                 $ref: '#/definitions/metadata' 
               result:
-                $ref: '#/definitions/vendorPlatesResponse'
+                $ref: '#/definitions/vendorPlateGetResponse'
           examples: {}
           headers: {}
-        '400':
-          description: Bad Request
-          examples:
-            'text/plain': 'Bad Request: Unknown tissue type' 
-      summary: Submit a new set of sample data
-      description: Submit a new set of sample data
+      summary: Get data for a subbmitted set of plates
+      description: Get data for a subbmitted set of plates
       tags: 
       - Vendor
 swagger: '2.0'

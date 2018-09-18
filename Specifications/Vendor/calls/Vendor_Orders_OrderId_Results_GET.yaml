@@ -2,6 +2,11 @@ paths:
   /vendor/orders/{orderId}/results:
     get:
       parameters:
+      - in: header
+        description: 'Token used for Authorization <br/> <strong>Bearer: <token_string> </strong>'
+        name: Authorization
+        type: string
+        required: true 
       - description: The order id returned by the vendor when the order was successfully submitted.
         in: path
         name: orderId

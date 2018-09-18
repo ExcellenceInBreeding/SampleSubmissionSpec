@@ -2,7 +2,12 @@ paths:
   /vendor/specifications:
     get:
       description: 'Defines the plate format specification for the vendor.'
-      parameters: []
+      parameters: 
+      - in: header
+        description: 'Token used for Authorization <br/> <strong>Bearer: <token_string> </strong>'
+        name: Authorization
+        type: string
+        required: true 
       produces:
       - application/json
       responses:

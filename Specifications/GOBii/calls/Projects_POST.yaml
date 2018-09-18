@@ -1,0 +1,21 @@
+paths:
+  /projects:
+    post:
+      description: Create project meta data in GOBii
+      parameters:
+      - in: header
+        description: 'Token used for Authorization <br/> <strong>Bearer: <token_string> </strong>'
+        name: Authorization
+        type: string
+        required: true 
+      - in: body
+        name: body
+        schema:
+          $ref: '#/definitions/gobiiProjectRequest'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/gobiiProjectResponse'
+      tags: 
+      - GOBii

@@ -16,6 +16,13 @@ definitions:
         type: object
         additionalProperties:
           type: string 
+      sampleType:
+        description: The type of Samples being submitted
+        type: string
+        enum:
+        - DNA
+        - RNA
+        - Tissue
       numberOfSamples:
         description: The total number of samples contained in this request. Used for billing and basic validation of the request.
         type: integer

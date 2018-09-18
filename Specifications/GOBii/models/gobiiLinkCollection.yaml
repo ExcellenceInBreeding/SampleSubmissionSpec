@@ -1,0 +1,21 @@
+definitions:
+  gobiiLinkCollection:
+    type: object
+    properties:
+      linksPerDataItem:
+        items: 
+          type: object
+          properties:
+            href:
+              type: string
+            description:
+              type: string
+            methods:
+              type: array
+              items:
+                type: string
+      exploreLinksPerDataItem:
+        type: array
+        items:
+          type: object
+            

@@ -1,10 +1,11 @@
 definitions:
   vendorSpecification:
+    type: object
     properties:
       additionalInfo:
         additionalProperties:
-          type: string
-        description: Additional arbitrary info
+          type: object
+        description: Additional arbitrary information specific to a particular Vendor. Look for the Vedors specific API documentation for more details
         type: object
       vendorContact:
         $ref: '#/definitions/vendorContact'

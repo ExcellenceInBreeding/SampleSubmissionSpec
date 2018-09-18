@@ -5,7 +5,7 @@ definitions:
     - fileURL
     - fileType
     - fileName
-    - clientSampleDbIds
+    - clientSampleIds
     properties:
       fileURL:
         description: 'The URL to a file with the results of a vendor analysis'
@@ -24,7 +24,7 @@ definitions:
       md5sum:
         description: 'MD5 Hash Check Sum for the file to confirm download without error'
         type: string
-      clientSampleDbIds:
+      clientSampleIds:
         description: 'The list of sampleDbIds included in the file'
         items:
           type: string
